@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Link Shortener & QR Code Generator. Create short URLs, branded links, QR codes with analytics. Fast, secure, and privacy-focused.">
+    <meta name="keywords" content="link shortener, URL shortener, QR code generator, free link shortener, branded links, link analytics">
+    <meta name="author" content="LinkShort Pro">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="LinkShort Pro | Free Link Shortener & QR Code Generator">
+    <meta property="og:description" content="Create short links, branded URLs, and QR codes with analytics. The most reliable free link management tool.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourdomain.com">
+    <meta property="og:image" content="https://yourdomain.com/images/preview.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://yourdomain.com">
+    <title>LinkShort Pro | Free Link Shortener & QR Code Generator</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles1.css">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <i class="fas fa-link"></i>
+                <h1>LinkShort Pro</h1>
+            </div>
+            <p class="tagline">The most reliable link management platform with advanced analytics</p>
+            
+            <div class="trust-badges">
+                <div class="badge"><i class="fas fa-lock"></i> Secure Links</div>
+                <div class="badge"><i class="fas fa-shield-alt"></i> Privacy Focused</div>
+                <div class="badge"><i class="fas fa-bolt"></i> Instant Redirects</div>
+            </div>
+        </header>
+
+        <main>
+            <div class="tool-container">
+                <div class="input-section">
+                    <div class="tab-buttons">
+                        <button class="tab-btn active" data-tab="shorten">Shorten Link</button>
+                        <button class="tab-btn" data-tab="qr">QR Generator</button>
+                        <button class="tab-btn" data-tab="analytics">Analytics</button>
+                        <button class="tab-btn" data-tab="branded">Branded Links</button>
+                    </div>
+
+                    <div class="tab-content active" id="shorten-tab">
+                        <div class="input-group">
+                            <input type="url" id="url-input" placeholder="Paste your long URL here" required>
+                            <div class="custom-domain">
+                                <select id="domain-select">
+                                    <option value="lnksht.pro">lnksht.pro/</option>
+                                    <option value="yourbrand.com">yourbrand.com/</option>
+                                </select>
+                                <input type="text" id="custom-path" placeholder="custom-path (optional)">
+                            </div>
+                            <button id="shorten-btn" class="primary-btn">
+                                <i class="fas fa-magic"></i> Shorten URL
+                            </button>
+                        </div>
+                        <div class="advanced-options">
+                            <label><input type="checkbox" id="expiry-check"> Set expiration</label>
+                            <label><input type="checkbox" id="password-check"> Password protect</label>
+                            <label><input type="checkbox" id="geo-check"> Geo-targeting</label>
+                        </div>
+                        <div class="result" id="shorten-result"></div>
+                    </div>
+
+                    <div class="tab-content" id="qr-tab">
+                        <div class="input-group">
+                            <input type="url" id="qr-input" placeholder="Enter URL for QR code" required>
+                            <button id="generate-btn" class="primary-btn">
+                                <i class="fas fa-qrcode"></i> Generate QR Code
+                            </button>
+                        </div>
+                        <div class="qr-options">
+                            <div class="option">
+                                <label>Color</label>
+                                <input type="color" id="qr-color" value="#000000">
+                            </div>
+                            <div class="option">
+                                <label>Size</label>
+                                <select id="qr-size">
+                                    <option value="200">200x200</option>
+                                    <option value="300">300x300</option>
+                                    <option value="400">400x400</option>
+                                </select>
+                            </div>
+                            <div class="option">
+                                <label>Logo</label>
+                                <input type="file" id="qr-logo" accept="image/*">
+                            </div>
+                        </div>
+                        <div class="result" id="qr-result">
+                            <div class="qr-placeholder">
+                                <i class="fas fa-qrcode"></i>
+                                <p>Your custom QR code will appear here</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="analytics-tab">
+                        <div class="input-group">
+                            <input type="text" id="analytics-input" placeholder="Enter your short URL to view analytics">
+                            <button id="analytics-btn" class="primary-btn">
+                                <i class="fas fa-chart-bar"></i> View Analytics
+                            </button>
+                        </div>
+                        <div class="result" id="analytics-result">
+                            <div class="analytics-placeholder">
+                                <i class="fas fa-chart-pie"></i>
+                                <p>Enter a short URL to view detailed analytics</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-content" id="branded-tab">
+                        <div class="input-group">
+                            <input type="url" id="branded-url-input" placeholder="Paste your long URL">
+                            <div class="custom-domain">
+                                <input type="text" id="branded-domain" placeholder="yourbrand.com" value="yourbrand.com" disabled>
+                                <span>/</span>
+                                <input type="text" id="branded-path" placeholder="custom-path" required>
+                            </div>
+                            <button id="branded-btn" class="primary-btn">
+                                <i class="fas fa-tag"></i> Create Branded Link
+                            </button>
+                        </div>
+                        <div class="result" id="branded-result"></div>
+                    </div>
+                </div>
+
+                <div class="features-section">
+                    <h2>Why Choose LinkShort Pro?</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <i class="fas fa-tachometer-alt"></i>
+                            <h3>Lightning Fast</h3>
+                            <p>Our global CDN ensures your links redirect instantly anywhere in the world.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h3>Advanced Analytics</h3>
+                            <p>Track clicks, locations, devices, and referral sources in real-time.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-lock"></i>
+                            <h3>Secure Links</h3>
+                            <p>SSL encryption, password protection, and link expiration options.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-bullseye"></i>
+                            <h3>Geo-Targeting</h3>
+                            <p>Send users to different URLs based on their location.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-qrcode"></i>
+                            <h3>Custom QR Codes</h3>
+                            <p>Generate branded QR codes with your logo and colors.</p>
+                        </div>
+                        <div class="feature-card">
+                            <i class="fas fa-infinity"></i>
+                            <h3>99.9% Uptime</h3>
+                            <p>Enterprise-grade reliability you can count on.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <div class="testimonials">
+            <h2>Trusted by Thousands</h2>
+            <div class="testimonial-grid">
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"LinkShort Pro has transformed our marketing campaigns. The analytics help us understand our audience better."</p>
+                    <div class="author">- Sarah K., Marketing Director</div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="rating">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                    <p>"The branded links have significantly improved our click-through rates. Highly recommended!"</p>
+                    <div class="author">- Michael T., E-commerce Manager</div>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <div class="footer-grid">
+                <div class="footer-section">
+                    <h3>LinkShort Pro</h3>
+                    <p>The most reliable link management platform with advanced analytics and security features.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#">API Documentation</a></li>
+                        <li><a href="#">Pricing</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Help Center</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Legal</h3>
+                    <ul>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Acceptable Use</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Connect</h3>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>© 2023 LinkShort Pro. All rights reserved.</p>
+                <p class="stats"><span id="total-links">1,245,879</span> links shortened | <span id="total-qrs">548,621</span> QR codes generated</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="script1.js"></script>
+</body>
+</html>

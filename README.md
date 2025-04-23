@@ -1,4 +1,4 @@
-```markdown
+
 # LinkShortPro  
 Free Link Shortener & QR Code Generator. Create short URLs, branded links, and QR codes with detailed analytics. Fast, secure, and privacy-focused.
 

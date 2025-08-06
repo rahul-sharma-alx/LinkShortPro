@@ -2,7 +2,7 @@
 # LinkShortPro  
 Free Link Shortener & QR Code Generator. Create short URLs, branded links, and QR codes with detailed analytics. Fast, secure, and privacy-focused.
 
-![Free online link shortener](https://github.com/rahul-sharma-alx/LinkShortPro/blob/main/LinkShortPro.png)
+![Free online link shortener](https://github.com/rahul-sharma-alx/LinkShortPro/blob/main/screenshot.png)
 
 ## Features  
 - **Short URLs**: Easily create short and memorable links.  
